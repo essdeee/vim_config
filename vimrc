@@ -42,12 +42,26 @@ set shiftwidth=4
 set softtabstop=4
 set autoindent
 
+" Whitespace Management Functions
+" Removes trailing spaces
+function TrimWhiteSpace()
+  %s/\s*$//
+  ''
+endfunction
+
+set list listchars=trail:.,extends:>
+autocmd FileWritePre * call TrimWhiteSpace()
+autocmd FileAppendPre * call TrimWhiteSpace()
+autocmd FilterWritePre * call TrimWhiteSpace()
+autocmd BufWritePre * call TrimWhiteSpace()
+
+map <F2> :call TrimWhiteSpace()<CR>
+map! <F2> :call TrimWhiteSpace()<CR>
+
 " Don't replace tabs in Makefiles
 autocmd FileType make setlocal noexpandtab
 
 " replace <ESC> with jk (<ESC> is too far away)
 inoremap jk <esc>
-
-"
-" 
+ 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
