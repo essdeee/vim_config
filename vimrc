@@ -49,7 +49,6 @@ function TrimWhiteSpace()
   ''
 endfunction
 
-set list listchars=trail:.,extends:>
 autocmd FileWritePre * call TrimWhiteSpace()
 autocmd FileAppendPre * call TrimWhiteSpace()
 autocmd FilterWritePre * call TrimWhiteSpace()
@@ -63,5 +62,5 @@ autocmd FileType make setlocal noexpandtab
 
 " replace <ESC> with jk (<ESC> is too far away)
 inoremap jk <esc>
- 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
