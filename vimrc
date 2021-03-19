@@ -59,6 +59,7 @@ map! <F2> :call TrimWhiteSpace()<CR>
 
 " Don't replace tabs in Makefiles
 autocmd FileType make setlocal noexpandtab
+autocmd Filetype c setlocal shiftwidth=8 softtabstop=8 tabstop=8 noexpandtab
 
 " replace <ESC> with jk (<ESC> is too far away)
 inoremap jk <esc>
